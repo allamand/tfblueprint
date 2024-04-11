@@ -13,14 +13,14 @@ spec:
               selector:
                 matchLabels:
                   workload_webstore: 'true'   
-              #values:
-              #  workload: webstore
+              values:
+                workload: webstore
 
           - git:
               repoURL: '{{metadata.annotations.workload_repo_url}}'
               revision: '{{metadata.annotations.workload_repo_revision}}'
               directories:
-                - path: '{{metadata.annotations.workload_repo_basepath}}{{metadata.annotations.workload_repo_path}}/*'
+                - path: '{{metadata.annotations.workload_repo_basepath}}{{values.workload}}/*'
                      
   template:
     metadata:
