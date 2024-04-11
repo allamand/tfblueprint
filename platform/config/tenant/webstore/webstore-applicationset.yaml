@@ -13,8 +13,8 @@ spec:
               selector:
                 matchLabels:
                   workload_webstore: 'true'   
-              values:
-                workload: webstore
+              #values:
+              #  workload: webstore
 
           - git:
               repoURL: '{{metadata.annotations.workload_repo_url}}'
